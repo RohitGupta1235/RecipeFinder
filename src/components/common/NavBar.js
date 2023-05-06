@@ -5,11 +5,27 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <Menu borderless fixed="top">
-      <Menu.Item>
+      <Menu.Item as={Link} to="/">
         <img src={logo} alt="logo" style={{ width: 150 }} />
       </Menu.Item>
-      <Menu.Item name="Home" as={Link} to="/" />
-      <Menu.Item name="Recipies" as={Link} to="/recipes" />
+      {/* <Menu.Item name="Home" as={Link} to="/" /> */}
+      <Menu.Item
+        name="Recipies"
+        as={Link}
+        to="/recipes"
+        style={{ color: "skyblue" }}
+      />
+      <Menu.Item
+        name="MyRecipe"
+        as={Link}
+        to="/myRecipes"
+        style={{ color: "skyblue" }}
+      />
+      <Menu.Item
+        component={Link}
+        name="ChatGpt"
+        href="https://chat.openai.com/"
+      />
     </Menu>
   );
 };

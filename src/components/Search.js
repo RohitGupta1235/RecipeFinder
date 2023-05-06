@@ -8,6 +8,7 @@ const Search = ({ setSearchedQuery }) => {
   const onFormSubmit = () => {
     setSearchedQuery(value);
   };
+
   return (
     <Grid columns={2} textAlign="center" className="search-box">
       <Grid.Column>
@@ -20,8 +21,10 @@ const Search = ({ setSearchedQuery }) => {
           <Input
             placeholder="tomato,potato,pizza"
             action={{ icon: "search", color: "blue" }}
-            onChange={(e) => setValue(e.target.value)}
             value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
           />
         </Form>
       </Grid.Column>
